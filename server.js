@@ -23,15 +23,14 @@ app.use('/', express.static('public'));
 //http://www.senchalabs.org/connect/static.html
 
 app.get('/fewest-guesses', function(req, res){
-	console.log('req ', req);
-	console.log('res ', res);
   res.json({guesses: parseInt(sessionFewestGuesses.fewestGuesses, 10)});
 });
 
 app.post('/fewest-guesses', function(req, res){
+
   var guess = sessionFewestGuesses.updateNumberOfGuesses(req.body.guessCount);
-  console.log('req.body ', req.body);
-  console.log('req.body.guessCount ', req.body.guessCount);
+  console.log('post req.body ', req.body);
+  console.log('post req.body.guessCount ', req.body.guessCount);
   res.status(201).json({guesses: parseInt(guess, 10)});
 });
 

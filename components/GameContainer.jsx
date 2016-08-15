@@ -9,6 +9,7 @@ var actions = require('../js/actions');
 class GameContainer extends React.Component{
   constructor(props){
     super(props);
+    console.log('super props ', super(props));
 
   }
   componentWillMount(){

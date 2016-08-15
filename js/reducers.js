@@ -62,7 +62,7 @@ var gameReducer = function(state, action) {
         return modalState;
 
       } else if (action.type === actions.FETCH_FEWEST_GUESS_SUCCESS) {
-            var fewestGuesses = compareNumberOfGuesses(state.fewestGuesses, state.guessArray.length);
+            var fewestGuesses = compareNumberOfGuesses(state.fewestGuesses, state.guessCount);
             var newFewest = Object.assign({}, state, {
                 fewestGuesses: action.fewestGuesses});
             return newFewest;
@@ -123,13 +123,14 @@ var gameReducer = function(state, action) {
       return feedback;
     };
 
-    var compareNumberOfGuesses = function(fewestGuesses, currentGuesses){
+    function compareNumberOfGuesses(fewestGuesses, guessCount){
       if (fewestGuesses <= currentGuesses){
         return fewestGuesses;
       } else {
         return currentGuesses;
       }
     };
+
     return state;
 
 }

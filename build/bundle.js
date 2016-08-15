@@ -23153,7 +23153,7 @@
 	    });
 	    return modalState;
 	  } else if (action.type === actions.FETCH_FEWEST_GUESS_SUCCESS) {
-	    var fewestGuesses = compareNumberOfGuesses(state.fewestGuesses, state.guessArray.length);
+	    var fewestGuesses = compareNumberOfGuesses(state.fewestGuesses, state.guessCount);
 	    var newFewest = Object.assign({}, state, {
 	      fewestGuesses: action.fewestGuesses });
 	    return newFewest;
@@ -23203,13 +23203,14 @@
 	    return feedback;
 	  };
 	
-	  var compareNumberOfGuesses = function compareNumberOfGuesses(fewestGuesses, currentGuesses) {
+	  function compareNumberOfGuesses(fewestGuesses, guessCount) {
 	    if (fewestGuesses <= currentGuesses) {
 	      return fewestGuesses;
 	    } else {
 	      return currentGuesses;
 	    }
 	  };
+	
 	  return state;
 	};
 	
@@ -23842,9 +23843,15 @@
 	  _inherits(GameContainer, _React$Component);
 	
 	  function GameContainer(props) {
+	    var _this;
+	
 	    _classCallCheck(this, GameContainer);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GameContainer).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GameContainer).call(this, props));
+	
+	    console.log('super props ', (_this = _possibleConstructorReturn(this, Object.getPrototypeOf(GameContainer).call(this, props)), _this));
+	
+	    return _this;
 	  }
 	
 	  _createClass(GameContainer, [{
