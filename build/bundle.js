@@ -23153,7 +23153,7 @@
 	    });
 	    return modalState;
 	  } else if (action.type === actions.FETCH_FEWEST_GUESS_SUCCESS) {
-	    var fewestGuesses = compareNumberOfGuesses(state.fewestGuesses, state.guessCount);
+	    var fewestGuesses = compareNumberOfGuesses(state.fewestGuesses, guessCount);
 	    var newFewest = Object.assign({}, state, {
 	      fewestGuesses: action.fewestGuesses });
 	    return newFewest;
@@ -23204,10 +23204,10 @@
 	  };
 	
 	  function compareNumberOfGuesses(fewestGuesses, guessCount) {
-	    if (fewestGuesses <= currentGuesses) {
+	    if (fewestGuesses <= guessCount) {
 	      return fewestGuesses;
 	    } else {
-	      return currentGuesses;
+	      return guessCount;
 	    }
 	  };
 	
