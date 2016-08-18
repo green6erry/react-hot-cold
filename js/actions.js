@@ -102,6 +102,7 @@ var fetchFewestGuesses = function(fewestGuesses){
 
 //!
 var saveGuessCount = function(guessCount){
+  console.log('from saveGuessCount, the guessCount being passed is ', guessCount);
   return function(dispatch){
     var url = 'http://localhost:4000/fewest-guesses';
     dispatch(saveGuessCountSuccess(guessCount));

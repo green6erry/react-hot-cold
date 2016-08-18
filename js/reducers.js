@@ -15,9 +15,6 @@ var initialGameState = {
 };
 
 var gameReducer = function(state, action) {
-    console.log ('state ', state); 
-    console.log('action ', action);
-
     state = state || initialGameState;  
     console.log ('state ', state); 
     console.log('action ', action);
@@ -105,7 +102,7 @@ var gameReducer = function(state, action) {
         }
         else if (currentDifference > 50) {
           feedback = 'Very cold!';
-          debugger;
+          // debugger;
         }
         else if (currentDifference <= 50 && currentDifference > 30){
           feedback = 'Cold';

@@ -23109,9 +23109,6 @@
 	};
 	
 	var gameReducer = function gameReducer(state, action) {
-	  console.log('state ', state);
-	  console.log('action ', action);
-	
 	  state = state || initialGameState;
 	  console.log('state ', state);
 	  console.log('action ', action);
@@ -23190,7 +23187,7 @@
 	        console.log('Please enter a different number');
 	      } else if (currentDifference > 50) {
 	        feedback = 'Very cold!';
-	        debugger;
+	        // debugger;
 	      } else if (currentDifference <= 50 && currentDifference > 30) {
 	        feedback = 'Cold';
 	      } else if (currentDifference <= 30 && currentDifference > 10) {
@@ -23322,6 +23319,7 @@
 	
 	//!
 	var saveGuessCount = function saveGuessCount(guessCount) {
+	  console.log('from saveGuessCount, the guessCount being passed is ', guessCount);
 	  return function (dispatch) {
 	    var url = 'http://localhost:4000/fewest-guesses';
 	    dispatch(saveGuessCountSuccess(guessCount));

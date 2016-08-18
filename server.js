@@ -7,6 +7,10 @@ var morgan = require('morgan');
 
 var port = process.env.PORT || 4000;
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
 var fewestGuesses = function(){
   this.fewestGuesses = 100;	
 };
